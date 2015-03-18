@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+  <modules>
+    <{{ module.Namespace }}_{{ module.Name }}>
+      <version>{{ module.version }}</version>
+    </{{ module.Namespace }}_{{ module.Name }}>
+  </modules>
+
+  <phpunit>
+    <suite>
+      <modules>
+        <{{ module.Namespace }}_{{ module.Name }} />
+      </modules>
+    </suite>
+  </phpunit>
+
+  <global>
+    <helpers>
+      <{{ module.namespace }}_{{ module.name }}>
+        <class>{{ module.Namespace }}_{{ module.Name }}_Helper</class>
+      </{{ module.namespace }}_{{ module.name }}>
+    </helpers>
+  </global>
+
+  <admin>
+    <routers>
+      <adminhtml>
+        <args>
+          <modules>
+            <{{ module.Namespace }}_{{ module.Name }} after="Mage_Adminhtml">{{ module.Namespace }}_{{ module.Name }}</{{ module.Namespace }}_{{ module.Name }}>
+          </modules>
+        </args>
+      </adminhtml>
+    </routers>
+  </admin>
+
+
+  <stores>
+    <admin>
+      <design>
+        <package>
+          <name>default</name>
+        </package>
+        <theme>
+          <default>{{ module.CustomAdminTheme }}</default>
+        </theme>
+      </design>
+    </admin>
+  </stores>
+
+  <adminhtml>
+    <layout>
+      <updates>
+        <{{ module.Namespace }}_{{ module.Name }}>
+          <file>{{ module.Namespace }}/{{ module.Name }}.xml</file>
+        </{{ module.Namespace }}_{{ module.Name }}>
+      </updates>
+    </layout>
+  </adminhtml>
+
+</config>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_{{ module.name }}_{{ module.action }}>
+        <reference name="content">
+            <block name="{{ module.namespace }}.{{ module.name }}.{{ module.action }}" type="adminhtml/page" template="{{ module.namespace }}/{{ module.name }}/{{ module.action }}.phtml" />
+        </reference>
+    </adminhtml_{{ module.name }}_{{ module.action }}>
+</layout>

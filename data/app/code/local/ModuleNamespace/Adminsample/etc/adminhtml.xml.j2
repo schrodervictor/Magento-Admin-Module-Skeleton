@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <{{ module.namespace }}_{{ module.name }}_{{ module.action }} translate="title" module="{{ module.namespace }}_{{ module.name }}">
+            <title>{{ module.title }}</title>
+            <sort_order>{{ module.sortorder }}</sort_order>
+            <action>adminhtml/{{ module.name }}/{{ module.action }}</action>
+            <children>
+            </children>
+        </{{ module.namespace }}_{{ module.name }}_{{ module.action }}>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <{{ module.namespace }}_{{ module.name }}_{{ module.action }} translate="title" module="{{ module.namespace }}_{{ module.name }}">
+                    <title>{{ module.Name }}</title>
+                        <sort_order>{{ module.sortorder }}</sort_order>
+                    </{{ module.namespace }}_{{ module.name }}_{{ module.action }}>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
